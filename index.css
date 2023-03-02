@@ -1,10 +1,10 @@
-*{
+* {
     padding: 0;
     margin: 0;
-    box-sizing:border-box ;
+    box-sizing: border-box;
 }
 
-body{
+body {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -16,26 +16,34 @@ body{
 
 }
 
-.contenedor{
-    gap: .5rem  ;
+.contenedor {
+    gap: .5rem;
     border-radius: 1rem;
-    width: 500px;
+    width: 360px;
     display: grid;
     grid-template-columns: 1;
-    grid-template-rows: 200px 250px 100px;
-    grid-template-areas: 
-    "header header"
-    "section PLateral"
-    "boton boton"
+    grid-template-rows: 150px 253px 90px;
+    grid-template-areas:
+        "header header"
+        "section PLateral"
+        "boton boton"
     ;
     background-color: #ffffff10;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
 
-header{
-    border-radius: 1rem 1rem 0 0 ;
-    background-color:#0000008d;
+@media screen and (min-width:768px) {
+    .contenedor {
+        grid-template-rows: 200px 250px 100px;
+        width: 500px;
+
+    }
+}
+
+header {
+    border-radius: 1rem 1rem 0 0;
+    background-color: #0000008d;
     grid-area: header;
     display: flex;
     align-items: center;
@@ -43,25 +51,28 @@ header{
 
 }
 
-section{
+section {
     gap: .5rem;
     grid-area: section;
     padding: 0 0 .5rem .35rem;
     display: grid;
-    grid-template-columns: repeat(3, minmax(100px,1fr));
+    grid-template-columns: repeat(3, minmax(80px, 1fr));
     grid-template-rows: repeat(3, 80px);
 }
-section.cero{
+
+section.cero {
     width: 254px;
     margin: .25rem 0 .5rem 0;
     display: flex;
     grid-area: boton;
 }
-section.cero>button{
+
+section.cero>button {
     width: 100%;
-    height: 76px;
+    height: 80px;
 }
-section.bFuncion{
+
+section.bFuncion {
     padding: 0 .25rem 0 .5rem;
     grid-area: PLateral;
     display: grid;
@@ -69,22 +80,61 @@ section.bFuncion{
     grid-template-rows: repeat(2, 167px);
     gap: .5rem;
 }
-button{
+
+@media screen and (min-width:768px) {
+
+    section{
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+        grid-template-rows: repeat(3, 80px);
+        padding: 0 0 0 .35rem;
+    }
+    section.cero{
+        width: 254px;
+    }
+    section.cero>button{
+        height: 76px;
+    }
+    section.bFuncion{
+        grid-template-rows: repeat(2, 167px);
+    }
+}
+
+/* @media screen and (min-width:1024px) {
+
+    section{
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+        grid-template-rows: repeat(3, 80px);
+    }
+    section.cero{
+        width: 254px;
+    }
+    section.cero>button{
+        height: 76px;
+    }
+    section.bFuncion{
+        grid-template-rows: repeat(2, 167px);
+    }
+} */
+
+button {
     color: azure;
     font-size: 2rem;
     font-weight: bold;
-    background-color:#0000008d;
+    background-color: #0000008d;
     border: 2px solid black;
-    border-radius:10px ;
+    border-radius: 10px;
 }
-button:hover{
-    background-color:#0000004d;
+
+button:hover {
+    background-color: #0000004d;
     border-color: #ffffff10;
 }
-button:active{
+
+button:active {
     color: aqua;
     border-color: #ffffff10;
 }
+
 #barra {
     font-weight: bold;
     font-size: 2rem;
