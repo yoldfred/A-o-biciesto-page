@@ -43,10 +43,14 @@ function handLerClick(e){
 let button = document.getElementById('test');
 
 button.addEventListener('click',()=>{
-    if ((resultado.valor % 4 === 0 && resultado.valor % 100 != 0) || resultado.valor % 400 === 0){
+    if(resultado.valor === ''){
+        resultado.valor= ''
+    }else{
+            if ((resultado.valor % 4 === 0 && resultado.valor % 100 != 0) || resultado.valor % 400 === 0){
         resultado.dom.innerText= 'el año ' + resultado.valor +' si es biciesto';
     }else{
         resultado.dom.innerText= 'el año ' + resultado.valor +' no es biciesto'
     
+    }
     }
 })
